@@ -1,2 +1,26 @@
-# RadienTired.github.io
-搞一个网站
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script src="axios.min.js"></script>
+<script>
+    const http=axios.create({
+        baseURL:'https:/v3pz.itndedu.com/v3pz',
+        timeout:10000
+    })
+    const getCode=(data)=>{
+        return http.post('/get/code',data)
+    }
+    getCode({
+        "tel":"18664422764"
+    }).then(({data})=>{
+        console.log(data)
+    })
+</script>
